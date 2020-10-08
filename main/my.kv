@@ -1,0 +1,603 @@
+WindowManager:
+    PublicLanding:
+    PublicSearch:
+    PublicResult:
+        id: public_result
+    PublicHelp:
+    Landing:
+    Search:
+    Result:
+        id: result
+    Login:
+    Account:
+    Help:
+
+<Landing>:
+    name: "landing"
+
+    FloatLayout:
+        Label:
+            text_size: root.width, root.height
+            halign: 'center'
+            pos_hint: {'y': 0.9}
+            font_name: "SourceSansPro"
+            bold: True
+            color: (137, 137, 137, 1)
+            text: "Find an advertise"
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.8}
+            font_name: "Times"
+            text: "From"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.7}
+            size_hint: 0.8, 0.07
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.55}
+            font_name: "Times"
+            text: "To"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.45}
+            size_hint: 0.8, 0.07
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Submit"
+            on_release:
+                app.root.current = "result"
+                root.manager.transition.direction = "down"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Search"
+            on_release:
+                app.root.current = "search"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Account"
+            on_release:
+                app.root.current = "account"
+                root.manager.transition.direction = "left"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "help"
+                root.manager.transition.direction = "left"
+
+<Login>:
+    name: "login"
+
+    FloatLayout:
+        Label:
+            text_size: root.width, root.height
+            halign: 'center'
+            pos_hint: {'y': 0.9}
+            font_name: "SourceSansPro"
+            bold: True
+            color: (137, 137, 137, 1)
+            text: "Access"
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.8}
+            font_name: "Times"
+            text: "Email"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.7}
+            size_hint: 0.8, 0.07
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.55}
+            font_name: "Times"
+            text: "Password"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.45}
+            size_hint: 0.8, 0.07
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Submit"
+            on_release:
+                app.root.current = "account"
+                root.manager.transition.direction = "down"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Search"
+            on_release:
+                app.root.current = "public_search"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Login"
+            on_release:
+                app.root.current = "login"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "public_help"
+                root.manager.transition.direction = "left"
+
+<Search>:
+    name: "search"
+
+    FloatLayout:
+        Label:
+            text_size: root.width, root.height
+            halign: 'center'
+            pos_hint: {'y': 0.9}
+            font_name: "SourceSansPro"
+            bold: True
+            color: (137, 137, 137, 1)
+            text: "Find an advertise"
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.8}
+            font_name: "Times"
+            text: "From"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.7}
+            size_hint: 0.8, 0.07
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.55}
+            font_name: "Times"
+            text: "To"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.45}
+            size_hint: 0.8, 0.07
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Submit"
+            on_release:
+                app.root.current = "result"
+                root.manager.transition.direction = "down"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Search"
+            on_release:
+                app.root.current = "search"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Account"
+            on_release:
+                app.root.current = "account"
+                root.manager.transition.direction = "left"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "help"
+                root.manager.transition.direction = "left"
+
+<Account>:
+    name: "account"
+
+    FloatLayout:
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Log off"
+            on_release:
+                app.root.current = "public_landing"
+                root.manager.transition.direction = "up"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Search"
+            on_release:
+                app.root.current = "search"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Account"
+            on_release:
+                app.root.current = "account"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "help"
+                root.manager.transition.direction = "left"
+
+<Help>:
+    name: "help"
+
+    FloatLayout:
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Search"
+            on_release:
+                app.root.current = "search"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Account"
+            on_release:
+                app.root.current = "account"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Help"
+            on_release:
+                app.root.current = "help"
+
+<Result>:
+    name: "result"
+
+    FloatLayout:
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.95}
+            size_hint: 1, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Previous"
+            on_release:
+                app.root.current = "search"
+                root.manager.transition.direction = "up"
+    ScrollView:
+        pos_hint: {"top": 0.9, "left": 1}
+        size_hint: 1, 0.9
+        GridLayout:
+            cols: 1
+            # Advertise list
+            id: advertise_list
+            spacing: 5, 5
+            size_hint_y: None
+            height: self.minimum_height
+            row_default_height: '100dp'
+            row_force_default: True
+
+<PublicLanding>:
+    name: "public_landing"
+
+    FloatLayout:
+        Label:
+            text_size: root.width, root.height
+            halign: 'center'
+            pos_hint: {'y': 0.9}
+            font_name: "SourceSansPro"
+            bold: True
+            color: (137, 137, 137, 1)
+            text: "Find an advertise"
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.8}
+            font_name: "Times"
+            text: "From"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.7}
+            size_hint: 0.8, 0.07
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.55}
+            font_name: "Times"
+            text: "To"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.45}
+            size_hint: 0.8, 0.07
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Submit"
+            on_release:
+                app.root.current = "public_result"
+                root.manager.transition.direction = "down"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Search"
+            on_release:
+                app.root.current = "public_landing"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Login"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "left"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "public_help"
+                root.manager.transition.direction = "left"
+
+<PublicSearch>:
+    name: "public_search"
+
+    FloatLayout:
+        Label:
+            text_size: root.width, root.height
+            halign: 'center'
+            pos_hint: {'y': 0.9}
+            font_name: "SourceSansPro"
+            bold: True
+            color: (137, 137, 137, 1)
+            text: "Find an advertise"
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.8}
+            font_name: "Times"
+            text: "From"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.7}
+            size_hint: 0.8, 0.07
+        Label:
+            text_size: root.width, root.height
+            halign: 'left'
+            pos_hint: {'x': 0.1, 'y': 0.55}
+            font_name: "Times"
+            text: "To"
+        TextInput:
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.1, 'y': 0.45}
+            size_hint: 0.8, 0.07
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.2}
+            size_hint: 0.5, 0.1
+            font_name: "SourceSansPro"
+            font_size: 19
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.6)
+            text: "Submit"
+            on_release:
+                app.root.current = "public_result"
+                root.manager.transition.direction = "down"
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Search"
+            on_release:
+                app.root.current = "public_search"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Login"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "left"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Help"
+            on_release:
+                app.root.current = "public_help"
+                root.manager.transition.direction = "left"
+
+<PublicResult>:
+    name: "public_result"
+
+    FloatLayout:
+        Button:
+            pos_hint: {'center_x': 0.5, 'y': 0.95}
+            size_hint: 1, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Previous"
+            on_release:
+                app.root.current = "public_search"
+                root.manager.transition.direction = "up"
+    ScrollView:
+        pos_hint: {"top": 0.9, "left": 1}
+        size_hint: 1, 0.9
+        GridLayout:
+            cols: 1
+            # Advertise list
+            id: advertise_list
+            spacing: 5, 5
+            size_hint_y: None
+            height: self.minimum_height
+            row_default_height: '100dp'
+            row_force_default: True
+
+<PublicHelp>:
+    name: "public_help"
+
+    FloatLayout:
+        Button:
+            pos_hint: {'x': 0, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Search"
+            on_release:
+                app.root.current = "public_search"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.333, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 0.5)
+            text: "Login"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "right"
+        Button:
+            pos_hint: {'x': 0.666, 'y': 0}
+            size_hint: 0.333, 0.055
+            font_name: "SourceSansPro"
+            font_size: 14
+            bold: True
+            color: (138, 138, 138, 1)
+            background_color: (137/255.0, 137/255.0, 137/255.0, 1)
+            text: "Help"
+            on_release:
+                app.root.current = "public_help"
