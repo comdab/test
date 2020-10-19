@@ -23,3 +23,4 @@ class ButtonList(BoxLayout, Button):
         self.bind(pos=self.update_rect, size=self.update_rect)
 
         self.id_button = kwargs['id_button']
+        ...
